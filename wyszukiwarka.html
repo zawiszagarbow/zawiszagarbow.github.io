@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+		img{
+			border-radius: 50%;
+			border: solid white;
+			width:200px;
+		}
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .google-container {
+            text-align: center;
+        }
+
+        .google-logo {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 500px;
+            height: 40px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 24px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4285f4;
+        }
+
+        .search-buttons {
+            margin-top: 20px;
+        }
+
+        .search-buttons button {
+            padding: 10px 20px;
+            margin: 6px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #f8f8f8;
+        }
+
+        .search-buttons button:hover {
+            background-color: #e8e8e8;
+        }
+
+        .search-buttons .google-search {
+            background-color: black;
+			border: solid white;
+			font-family: consolas;
+            color: white;
+        }
+
+        .search-buttons .google-search:hover {
+            background-color: black;
+        }
+
+        .search-buttons .lucky-search {
+            background-color: #f8f8f8;
+            color: orange;
+			font-family: consolas;
+        }
+
+        .search-buttons .lucky-search:hover {
+            background-color: #f1f1f1;
+			font-family: consolas;
+			color: black;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #70757a;
+        }
+
+        .footer a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+		#search-query{
+			background-color: black;
+			border: solid white;
+			color: white;
+			font-family: consolas;
+		}
+    </style>
+</head>
+<body>
+
+    <div class="google-container">
+        <div class="google-logo">
+            <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t1.15752-9/418531658_962972775423133_5738619272532630595_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=108&ccb=1-7&_nc_sid=b70caf&_nc_ohc=c_P9jQ23G68Q7kNvgFa5Z4l&_nc_oc=AdmW0g8kd8TQToKuvww764dciDJd9n3YJXbYir6Xof9Z5f2ep3Pkq-5paouhQdNSut0&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&oh=03_Q7cD1wGsoW9sn5_jrHS3rzWu4AbZlPXT3ssGk4KNb57oEmtLrg&oe=6803EF89" alt="DPO Garbów Logo">
+        </div>
+        
+        <form id="search-form" action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" id="search-query" name="q" placeholder="Wpisz, czego szukasz drogi kibicu..." required>
+        </form>search-query
+
+        <div class="search-buttons">
+            <button type="submit" class="google-search" form="search-form">Szukaj w Google</button>
+            <button type="button" class="lucky-search" onclick="window.location.href='https://www.google.com/doodles'">Czuję się szczęśliwy!</button>
+        </div>
+
+        <div class="footer">
+            <p>DPO Zawisza Garbów</p>
+        </div>
+    </div>
+
+</body>
+</html>
