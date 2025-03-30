@@ -198,7 +198,7 @@ a:hover {
 	</style>
 <body>
 <p><span style="font-size: 30px;">Match simulator</span></p>
-	    <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -213,6 +213,8 @@ a:hover {
             max-width: 500px;
             margin: 20px auto;
             text-align: left;
+            height: 300px;
+            overflow-y: auto;
         }
         button {
             padding: 10px 20px;
@@ -222,6 +224,7 @@ a:hover {
             background: #007bff;
             color: white;
             border-radius: 5px;
+            margin-top: 10px;
         }
         button:hover {
             background: #0056b3;
@@ -229,7 +232,10 @@ a:hover {
     </style>
 </head>
 <body>
-    <h1>Symulator Meczu Piłkarskiego</h1>
+    <label for="teamA">Drużyna A: </label>
+    <input type="text" id="teamA" placeholder="Wpisz nazwę"><br>
+    <label for="teamB">Drużyna B: </label>
+    <input type="text" id="teamB" placeholder="Wpisz nazwę"><br>
     <button onclick="startMatch()">Rozpocznij mecz</button>
     <div id="log"></div>
     
@@ -243,9 +249,15 @@ a:hover {
             }
     
             simulateMinute() {
-                this.minute++;
-                let event = this.generateEvent();
-                if (event) this.log.push(`Min ${this.minute}: ${event}`);
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        this.minute++;
+                        let event = this.generateEvent();
+                        if (event) this.log.push(`Min ${this.minute}: ${event}`);
+                        this.updateLog();
+                        resolve();
+                    }, 200);
+                });
             }
     
             generateEvent() {
@@ -264,25 +276,29 @@ a:hover {
                 return null;
             }
     
-            simulateMatch() {
-                while (this.minute < 90) {
-                    this.simulateMinute();
+            async simulateMatch() {
+                for (let i = 0; i < 90; i++) {
+                    await this.simulateMinute();
                 }
                 this.log.push(`Koniec meczu! Wynik: ${this.teamA.name} ${this.teamA.score} - ${this.teamB.score} ${this.teamB.name}`);
+                this.updateLog();
             }
     
-            displayLog() {
+            updateLog() {
                 document.getElementById("log").innerHTML = this.log.join("<br>");
             }
         }
     
         function startMatch() {
-            const match = new FootballMatch("FC Barcelona", "Real Madrid");
+            const teamAName = document.getElementById("teamA").value || "Drużyna A";
+            const teamBName = document.getElementById("teamB").value || "Drużyna B";
+            document.getElementById("log").innerHTML = "";
+            const match = new FootballMatch(teamAName, teamBName);
             match.simulateMatch();
-            match.displayLog();
         }
     </script>
 </body>
 </html>
+
 </body>
 </html>
