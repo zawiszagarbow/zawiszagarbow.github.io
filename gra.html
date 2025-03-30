@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GryGarbów</title>
+</head>
+	    <script>
+        function updateClock() {
+            const now = new Date(); // Pobiera bieżącą datę i godzinę
+            const hours = now.getHours().toString().padStart(2, '0'); // Godziny
+            const minutes = now.getMinutes().toString().padStart(2, '0'); // Minuty
+            const seconds = now.getSeconds().toString().padStart(2, '0'); // Sekundy
+
+            // Ustawia czas w formacie HH:MM:SS
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Uaktualnia zegar co sekundę
+        setInterval(updateClock, 1000);
+
+        // Inicjalizuje zegar natychmiastowo
+        updateClock();
+    </script>
+<style>
+	        a {
+            text-decoration: none; /* Usuwa podkreślenie */
+            color: blue;           /* Kolor linków */
+        }
+
+        /* Dodatkowo, aby linki były bardziej wyraziste po najechaniu */
+        a:hover {
+            text-decoration: underline; /* Możesz dodać efekt podkreślenia przy najechaniu */
+            color: black;            /* Zmieniamy kolor na ciemniejszy przy najechaniu */
+        }
+	body{
+		background-image: repeating-radial-gradient(#abcdef,#0A0B0B);
+		
+	}
+	.nav1 , span{
+		 top: 0;           /* Ustawia nawigację na samej górze */
+            left: 0;  
+		 z-index: 99;
+  width: 100%;
+		  justify-content: space-between;
+		 transition: all 0.3s ease;
+		text-decoration: none;
+	font-size: 16px;
+  background-image: linear-gradient(#1C1D1D ,#0A0B0B);
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}
+
+span,button:active {
+  border-bottom-color: #a2a6ac;
+}
+
+span,button:active:hover {
+  border-bottom-color: #a2a6ac;
+}
+span,button:hover {
+  border-color: #a2a6ac #979aa1 #82858a;
+}
+
+span , button:focus {
+  border-color: white;
+  box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;;
+}body>
+		.nav1{
+			background-image: linear-gradient(#1C1D1D ,#0A0B0B);
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+			width: 100%;
+	}
+	.nav1{
+		position: fixed;
+		box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;;
+	}
+	.math{
+		background-color: gray;
+		font-family: arial;
+		width: 50%;
+		border: solid;
+		 box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+		border-color: #adb1b8 #a2a6ac #8d9096;
+		background-image: linear-gradient(#1C1D1D ,#0A0B0B);
+		color: white;
+	}
+	.logo1{
+		width:70px;
+		float: left;
+		border-radius: 50%;
+		border: solid white;
+				 top: 0;           /* Ustawia nawigację na samej górze */
+            left: 0;  
+		 z-index: 99;
+	}
+	/* Ustawienia dla telefonów */
+@media screen and (max-width: 768px) {
+  /* Główne style */
+body {
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Nawigacja */
+.nav1 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1C1D1D;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav1 p {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+}
+
+/* Sekcja treści */
+.math {
+    background: #222;
+    width: 80%;
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Logo */
+.logo1 {
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Linki */
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media screen and (max-width: 2000px) {
+    .nav1 p {
+        flex-direction:column;
+		position:absolute;
+        gap: 50px;
+    }
+    .math {
+        width: 50%;
+        padding: 50px;
+    }
+    .logo1 {
+        width: 15px;
+    }
+	span{
+		font-size: 10px;
+		padding: 2px;
+	}
+}
+	</style>
+<body>
+<p><span style="font-size: 30px;">Match simulator</span></p>
+	    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #log {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Symulator Meczu Piłkarskiego</h1>
+    <button onclick="startMatch()">Rozpocznij mecz</button>
+    <div id="log"></div>
+    
+    <script>
+        class FootballMatch {
+            constructor(teamA, teamB) {
+                this.teamA = { name: teamA, score: 0 };
+                this.teamB = { name: teamB, score: 0 };
+                this.minute = 0;
+                this.log = [];
+            }
+    
+            simulateMinute() {
+                this.minute++;
+                let event = this.generateEvent();
+                if (event) this.log.push(`Min ${this.minute}: ${event}`);
+            }
+    
+            generateEvent() {
+                let chance = Math.random();
+                if (chance < 0.05) {
+                    let scoringTeam = Math.random() < 0.5 ? this.teamA : this.teamB;
+                    scoringTeam.score++;
+                    return `${scoringTeam.name} strzela gola! (${scoringTeam.score})`;
+                } else if (chance < 0.1) {
+                    return "Faul na boisku!";
+                } else if (chance < 0.15) {
+                    return "Rzut rożny!";
+                } else if (chance < 0.2) {
+                    return "Rzut wolny!";
+                }
+                return null;
+            }
+    
+            simulateMatch() {
+                while (this.minute < 90) {
+                    this.simulateMinute();
+                }
+                this.log.push(`Koniec meczu! Wynik: ${this.teamA.name} ${this.teamA.score} - ${this.teamB.score} ${this.teamB.name}`);
+            }
+    
+            displayLog() {
+                document.getElementById("log").innerHTML = this.log.join("<br>");
+            }
+        }
+    
+        function startMatch() {
+            const match = new FootballMatch("FC Barcelona", "Real Madrid");
+            match.simulateMatch();
+            match.displayLog();
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
